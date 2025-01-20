@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Clock</title>
+    <style>
+      /* Reset default margins and paddings */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1e1e1e; /* Dark background for contrast */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative; /* For positioning the time display */
+        overflow: hidden; /* Hide any overflow */
+      }
+
+      canvas {
+        border: 2px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Time Display Styling */
+      #timeDisplay {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 600px) {
+        #timeDisplay {
+          font-size: 18px;
+          padding: 8px 12px;
+        }
+
+        canvas {
+          width: 90%;
+          height: auto;
+        }
+      }
+    </style>
+    <!-- p5.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="sketch.js" defer></script>
+  </head>
+  <body>
+    <!-- Div to display current time -->
+    <div id="timeDisplay">Loading...</div>
+  </body>
+</html>
+
+
