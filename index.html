@@ -10,20 +10,54 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
+      /* Overall page styling */
       body {
+        background-color: #f5f5dc; /* beige */
+        color: #000; /* black text */
         padding-top: 70px;
-      }
-      .jumbotron {
-        background-color: #f8f9fa;
       }
       .section {
         padding: 60px 0;
+      }
+      /* Jumbotron header */
+      .jumbotron {
+        background-color: #f5f5dc;
+        color: #000;
+      }
+      /* Navbar styling: black background with beige text */
+      .navbar {
+        background-color: #000;
+      }
+      .navbar-brand,
+      .nav-link {
+        color: #f5f5dc !important;
+      }
+      /* Toggler icon override for better visibility on dark navbar */
+      .navbar-toggler {
+        border-color: #f5f5dc;
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28%245F5FDC, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+      /* Button styling */
+      .btn-primary {
+        background-color: #000;
+        border-color: #000;
+      }
+      .btn-primary:hover {
+        background-color: #333;
+        border-color: #333;
+      }
+      /* Footer styling */
+      footer {
+        background-color: #000;
+        color: #f5f5dc;
       }
     </style>
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Nikos Goutzoulias</a>
         <button
@@ -42,7 +76,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cv">CV</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#projects">Projects</a>
             </li>
@@ -68,24 +104,29 @@
         <h2>About Me</h2>
         <p>
           Welcome! I am a Computer Science graduate student at Columbia
-          Univeristy. A team player, passionate about solving complex problems
+          University. A team player, passionate about solving complex problems
           and building scalable systems. With professional experience as a
-          machine learning engineer and a degree in electrical ang computer
+          machine learning engineer and a degree in electrical and computer
           engineering, I aim to bring innovation on every project I work on.
         </p>
       </div>
     </section>
 
     <!-- CV Section -->
-    <section id="cv" class="section bg-light">
+    <section id="cv" class="section">
       <div class="container">
         <h2>Curriculum Vitae</h2>
         <p>Below is a summary of my professional experience and education:</p>
         <ul>
           <li>
-            <strong>Education:</strong> Computer Science MS from Columbia
-            University | Integrated M.Eng. in Electrical and Computer
-            Engineering from NAtional Technical University of Athens
+            <strong>Education:</strong>
+            <ul>
+              <li>Computer Science MS from Columbia University</li>
+              <li>
+                Integrated M.Eng. in Electrical and Computer Engineering from
+                National Technical University of Athens
+              </li>
+            </ul>
           </li>
           <li>
             <strong>Experience:</strong> Machine Learning Engineer, Data Science
@@ -128,7 +169,7 @@
               </div>
             </div>
           </div>
-          <!-- Repeat for additional projects -->
+          <!-- Repeat for additional projects as needed -->
         </div>
       </div>
     </section>
@@ -143,8 +184,7 @@
         </p>
         <ul class="list-unstyled">
           <li>
-            Email:
-            <a href="mailto:ng2985@columbia.edu">your.email@example.com</a>
+            Email: <a href="mailto:ng2985@columbia.edu">ng2985@columbia.edu</a>
           </li>
           <li>
             LinkedIn:
