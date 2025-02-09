@@ -10,36 +10,43 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
-      /* Overall page styling */
+      /* Overall Page Styling */
       body {
-        background-color: #f5f5dc; /* beige */
-        color: #000; /* black text */
+        background-color: #f2e2c4; /* soft light brown */
+        color: #000;
         padding-top: 70px;
       }
+      /* Fade-In on Scroll for Sections */
       .section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         padding: 60px 0;
       }
-      /* Jumbotron header */
+      .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Jumbotron (Header) Styling */
       .jumbotron {
-        background-color: #f5f5dc;
+        background-color: #f2e2c4;
         color: #000;
       }
-      /* Navbar styling: black background with beige text */
+      /* Navbar Styling */
       .navbar {
         background-color: #000;
       }
       .navbar-brand,
       .nav-link {
-        color: #f5f5dc !important;
+        color: #f2e2c4 !important;
       }
-      /* Toggler icon override for better visibility on dark navbar */
       .navbar-toggler {
-        border-color: #f5f5dc;
+        border-color: #f2e2c4;
       }
       .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28%245F5FDC, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242,226,196,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
       }
-      /* Button styling */
+      /* Button Styling */
       .btn-primary {
         background-color: #000;
         border-color: #000;
@@ -48,10 +55,18 @@
         background-color: #333;
         border-color: #333;
       }
-      /* Footer styling */
+      /* Card Hover Effect */
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+      /* Footer Styling */
       footer {
         background-color: #000;
-        color: #f5f5dc;
+        color: #f2e2c4;
       }
     </style>
   </head>
@@ -175,7 +190,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section bg-light">
+    <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
         <p>
@@ -215,5 +230,23 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Intersection Observer for Fade-In Effect -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".section");
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        sections.forEach((section) => observer.observe(section));
+      });
+    </script>
   </body>
 </html>
