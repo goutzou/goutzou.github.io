@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,7 +20,9 @@
       .section {
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
         padding: 60px 0;
       }
       .section.visible {
@@ -57,7 +59,9 @@
       }
       /* Card Hover Effect */
       .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
       }
       .card:hover {
         transform: scale(1.03);
@@ -132,19 +136,20 @@
       <div class="container">
         <h2>About Me</h2>
         <p>
-          Nikos is an ex-Blockchain Data Scientist Intern at Ripple and a
-          Computer Science graduate student at Columbia University. A team
-          player, passionate about solving complex problems and building
-          scalable systems. With professional experience as a Machine Learning
-          Engineer and research experience in Software Systems, he aims to bring
-          innovation to every project he works on. He holds an Integrated Master
-          of Engineering from the School of Electrical and Computer Engineering
-          at the National Technical University of Athens, having graduated in
-          the top 5% of his class of 400 students. He was also in the top 1% of
-          students in Greece in the Greek National Exams. A recipient of the
-          Proud of Youth Scholarship from HelleniQ Energy and the Aegean
-          Shipping Management Scholarship from the Union of Greek Shipowners,
-          Nikos has a proven track record of delivering under pressure.
+          Nikos is a Data Scientist at Ripple specializing in Agentic AI
+          deployment, Machine Learning systems and on-chain data analysis. He
+          holds an MS in Computer Science from Columbia University and an
+          integrated M.Eng. in Electrical and Computer Engineering from the
+          National Technical University of Athens having graduated in the top 5%
+          of his class of 400 students. A team player with excellent social
+          skills, comfortable interracting with non-technical people, he thrives
+          in high-pressure environments. He has conducted research at Columbia
+          Irving Medical Center on the application of Agentic AI on medical
+          notes and at Columbia University Software Systems Lab to create a
+          browser API in C++ for Chrome. A recipient of the Proud of Youth
+          Scholarship from HelleniQ Energy and the Aegean Shipping Management
+          Scholarship from the Union of Greek Shipowners, Nikos has a proven
+          track record of delivering under pressure.
         </p>
       </div>
     </section>
@@ -402,7 +407,7 @@
               }
             });
           },
-          { threshold: 0.2 }
+          { threshold: 0.2 },
         );
         sections.forEach((section) => observer.observe(section));
       });
